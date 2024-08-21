@@ -389,7 +389,7 @@ spec:
                                   --ServerApp.quit_button=False
                                   --ServerApp.tornado_settings={"user":"user","hub_host":"https://rhods-dashboard-redhat-ods-applications.apps.{{ .Values.clusterdomainurl }}","hub_prefix":"/projects/ml-development"}
             - name: JUPYTER_IMAGE
-              value: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/odh-tec:latest
+              value: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/odh-tec:v0.1
             - name: SSL_CERT_FILE
               value: /etc/pki/tls/custom-certs/ca-bundle.crt
             - name: PIPELINES_SSL_SA_CERTS
@@ -417,7 +417,7 @@ spec:
           envFrom:
             - secretRef:
                 name: aws-connection-user
-          image: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/odh-tec:latest
+          image: image-registry.openshift-image-registry.svc:5000/redhat-ods-applications/odh-tec:v0.1
           workingDir: /opt/app-root/src
         - resources:
             limits:
